@@ -2,27 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Privacy Policy - Your Studio Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - The Oracle</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { border-bottom: 2px solid #6A5ACD; padding-bottom: 10px; }
-        .app-section { margin-top: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
-        .last-updated { font-style: italic; color: #777; }
+        :root {
+            --primary-color: #6A5ACD; /* 对应你代码中的 brand_purple */
+            --text-main: #333333;
+            --text-sec: #666666;
+            --bg-color: #F8F9FE;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text-main); background: var(--bg-color); margin: 0; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .lang-switch { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 20px; }
+        .lang-btn { background: #eee; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.3s; }
+        .lang-btn.active { background: var(--primary-color); color: white; }
+        h1 { color: var(--primary-color); border-bottom: 2px solid var(--bg-color); padding-bottom: 15px; font-size: 24px; }
+        h2 { font-size: 20px; margin-top: 30px; color: var(--primary-color); }
+        p, li { color: var(--text-sec); font-size: 15px; }
+        .app-card { border-left: 4px solid var(--primary-color); padding-left: 20px; margin: 20px 0; background: #fcfcff; padding: 15px; }
+        footer { text-align: center; margin-top: 40px; font-size: 13px; color: #999; }
+        [lang="zh"] { display: none; } /* 默认隐藏中文 */
     </style>
 </head>
 <body>
-    <h1>Privacy Policy Center</h1>
-    <p class="last-updated">Last Updated: May 2026</p>
 
-    <!-- 未来你做新应用，只需要复制下面这段 div 即可 -->
-    <div class="app-section" id="the-oracle">
-        <h2>App: The Oracle (天命金線)</h2>
-        <p>This application does not collect or share any user data. It functions entirely offline for core services.</p>
-        <p><strong>Ads:</strong> This app currently does not contain advertisements. (Planned update: AdMob integration will follow Google's standard data policy).</p>
+<div class="container">
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('zh')">中文</button>
     </div>
 
-    <!-- 底部通用声明 -->
-    <hr>
-    <p>Contact: [your-email@example.com]</p>
+    <!-- 英文版内容 (English Version) -->
+    <div id="content-en" lang="en">
+        <h1>Privacy Policy</h1>
+        <p>Last Updated: May 2026</p>
+        
+        <div class="app-card">
+            <strong>Application:</strong> The Oracle (一问)
+        </div>
+
+        <h2>1. Overview</h2>
+        <p>This Privacy Policy describes how we handle your personal information. We take your privacy seriously and ensure that our application provides a safe environment for all users.</p>
+
+        <h2>2. Data Collection</h2>
+        <p>Our application is designed as a standalone tool. We <strong>DO NOT</strong> collect, store, or transmit any personally identifiable information (PII), such as your name, email address, or phone number.</p>
+        <ul>
+            <li><strong>Offline Functionality:</strong> Most core features of the app function without an internet connection.</li>
+            <li><strong>No Account Required:</strong> You do not need to create an account to use our service.</li>
+        </ul>
+
+        <h2>3. Permissions</h2>
+        <p>We only request permissions that are essential for the app's performance:</p>
+        <ul>
+            <li><strong>Internet & Network State:</strong> Used to provide core services and verify connectivity.</li>
+        </ul>
+
+        <h2>4. Advertising</h2>
+        <p>The current version of this application does not contain advertisements. Future updates may include Google AdMob, which follows Google's privacy protocols.</p>
+
+        <h2>5. Contact</h2>
+        <p>If you have questions, please contact us at: <strong>[Your Email Here]</strong></p>
+    </div>
+
+    <!-- 中文版内容 (Chinese Version) -->
+    <div id="content-zh" lang="zh">
+        <h1>隐私政策</h1>
+        <p>最近更新：2026年5月</p>
+
+        <div class="app-card">
+            <strong>应用名称：</strong> The Oracle (一问)
+        </div>
+
+        <h2>1. 概述</h2>
+        <p>本隐私政策说明了我们如何处理您的个人信息。我们高度重视您的隐私，并致力于为所有用户提供安全的应用环境。</p>
+
+        <h2>2. 数据收集</h2>
+        <p>本应用是一款独立的工具类产品。我们<strong>不会</strong>收集、存储或传输任何个人身份信息（PII），例如您的姓名、电子邮件地址或电话号码。</p>
+        <ul>
+            <li><strong>离线功能：</strong> 应用的核心功能可在无网络连接的情况下运行。</li>
+            <li><strong>无需注册：</strong> 您无需创建账户即可使用我们的服务。</li>
+        </ul>
+
+        <h2>3. 权限说明</h2>
+        <p>我们仅申请确保应用性能所必需的权限：</p>
+        <ul>
+            <li><strong>网络访问权限：</strong> 仅用于提供核心服务及检查网络连接状态。</li>
+        </ul>
+
+        <h2>4. 广告说明</h2>
+        <p>当前版本的应用不含广告。未来的更新可能会集成 Google AdMob，届时将遵循 Google 的隐私协议。</p>
+
+        <h2>5. 联系我们</h2>
+        <p>如有任何疑问，请联系： <strong>[您的电子邮箱]</strong></p>
+    </div>
+
+    <footer>
+        &copy; 2026 The Oracle Studio. All rights reserved.
+    </footer>
+</div>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('[lang]').forEach(el => el.style.display = 'none');
+        document.getElementById('content-' + lang).style.display = 'block';
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
 </body>
 </html>
