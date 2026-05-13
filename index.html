@@ -6,7 +6,7 @@
     <title>Privacy Policy - The Oracle</title>
     <style>
         :root {
-            --primary-color: #6A5ACD; /* 对应你代码中的 brand_purple */
+            --primary-color: #6A5ACD;
             --text-main: #333333;
             --text-sec: #666666;
             --bg-color: #F8F9FE;
@@ -21,7 +21,9 @@
         p, li { color: var(--text-sec); font-size: 15px; }
         .app-card { border-left: 4px solid var(--primary-color); padding-left: 20px; margin: 20px 0; background: #fcfcff; padding: 15px; }
         footer { text-align: center; margin-top: 40px; font-size: 13px; color: #999; }
-        [lang="zh"] { display: none; } /* 默认隐藏中文 */
+        
+        /* 核心修正：默认只隐藏中文内容块，不影响其他属性 */
+        #content-zh { display: none; } 
     </style>
 </head>
 <body>
@@ -33,7 +35,7 @@
     </div>
 
     <!-- 英文版内容 (English Version) -->
-    <div id="content-en" lang="en">
+    <div id="content-en">
         <h1>Privacy Policy</h1>
         <p>Last Updated: May 2026</p>
         
@@ -61,11 +63,11 @@
         <p>The current version of this application does not contain advertisements. Future updates may include Google AdMob, which follows Google's privacy protocols.</p>
 
         <h2>5. Contact</h2>
-        <p>If you have questions, please contact us at: <strong>[Your Email Here]</strong></p>
+        <p>If you have questions, please contact us at: <strong>novalyxsupport@163.com</strong></p>
     </div>
 
     <!-- 中文版内容 (Chinese Version) -->
-    <div id="content-zh" lang="zh">
+    <div id="content-zh">
         <h1>隐私政策</h1>
         <p>最近更新：2026年5月</p>
 
@@ -93,7 +95,7 @@
         <p>当前版本的应用不含广告。未来的更新可能会集成 Google AdMob，届时将遵循 Google 的隐私协议。</p>
 
         <h2>5. 联系我们</h2>
-        <p>如有任何疑问，请联系： <strong>[novalyxsupport@163.com ]</strong></p>
+        <p>如有任何疑问，请联系： <strong>novalyxsupport@163.com</strong></p>
     </div>
 
     <footer>
@@ -103,9 +105,14 @@
 
 <script>
     function setLang(lang) {
-        document.querySelectorAll('[lang]').forEach(el => el.style.display = 'none');
+        // 隐藏所有内容块
+        document.getElementById('content-en').style.display = 'none';
+        document.getElementById('content-zh').style.display = 'none';
+        
+        // 显示选中的内容块
         document.getElementById('content-' + lang).style.display = 'block';
         
+        // 切换按钮样式
         document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
         event.currentTarget.classList.add('active');
     }
